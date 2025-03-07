@@ -24,14 +24,7 @@
     <div id="chekin_guest_sdk"></div>
   </div>
 
-  <button onclick="refresh()">Refresh</button>
-
   <script>
-
-    function refresh() {
-      window.parent.location = document.referrer;
-    }
-
     window.onload = function () {
       const script = document.createElement("script");
       script.src = "https://cdn.chekin.com/developmentV2/ChekinPro.js";
@@ -46,7 +39,7 @@
               "81946b849ce61646ca588b8e009182a7794a46f4ad2682432e7cdc053cbc1004",
             reservationId: "75ecb63ea39b43a28306ef0a42490796",
             mode: "ONLY_GUEST_FORM",
-            onGuestRegistered: (data) => console.log("GUEST:", data),
+            onGuestRegistered: (data) => refresh(),
             onAllGuestsRegistered: (onAllGuestsRegistered) =>
               console.log("All guests registered!", onAllGuestsRegistered),
           });
