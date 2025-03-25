@@ -28,13 +28,8 @@
   <script>
 
 
-    function onGuestRegistered() {
-      console.log("XX_ onGuestRegistered called");
-      // window.parent.location = document.referrer;
-    }
-
     function onAllGuestsRegistered() {
-      console.log("XX_ onAllGuestsRegistered called");
+      window.parent.location = document.referrer;
     }
 
     window.onload = function () {
@@ -53,7 +48,6 @@
               "81946b849ce61646ca588b8e009182a7794a46f4ad2682432e7cdc053cbc1004",
             reservationId: params.get('reservationId'),
             mode: "ONLY_GUEST_FORM",
-            onGuestRegistered: (data) => onGuestRegistered(),
             onAllGuestsRegistered: (onAllGuestsRegistered) => onAllGuestsRegistered(),
           });
 
