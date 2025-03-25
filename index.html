@@ -24,7 +24,15 @@
     <div id="chekin_guest_sdk"></div>
   </div>
 
+
   <script>
+
+
+    function refresh() {
+      console.log("XX_ onGuestRegistered called");
+      window.parent.location = document.referrer;
+    }
+
     window.onload = function () {
       const script = document.createElement("script");
       script.src = "https://cdn.chekin.com/developmentV2/ChekinPro.js";
