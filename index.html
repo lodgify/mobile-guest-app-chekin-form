@@ -24,12 +24,15 @@
     <div id="chekin_guest_sdk"></div>
   </div>
 
-
   <script>
+    function allRegistered(hash) {
+      if (hash == null) {
+        window.parent.location = document.referrer;
+        return;
+      }
 
-
-    function allRegistered() {
-      window.parent.location = document.referrer;
+      const host = window.location.href
+      window.parent.location.href = `${host}/form/${hash}`
     }
 
     window.onload = function () {
@@ -49,7 +52,7 @@
             reservationId: params.get('reservationId'),
             defaultLanguage: params.get('lang'),
             mode: "ONLY_GUEST_FORM",
-            onAllGuestsRegistered: (onAllGuestsRegistered) => allRegistered(),
+            onAllGuestsRegistered: (onAllGuestsRegistered) => allRegistered(params.get('hash')),
           });
 
           api.renderApp({ targetNode: "chekin_guest_sdk" });
