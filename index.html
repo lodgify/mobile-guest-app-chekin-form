@@ -43,8 +43,8 @@
 
       const params = new URLSearchParams(window.location.search);
 
-      let host = window.location.host;
-      console.log(`${host}/form/${params.get('hash')}`)
+      let host = window.location.protocol + '//' + window.location.hostwindow.location.host;
+      console.log(`XX_ ${host}/form/${params.get('hash')}`)
 
       script.onload = function () {
         if (window.ChekinPro) {
