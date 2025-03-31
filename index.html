@@ -31,8 +31,9 @@
         return;
       }
 
-
-      let host = window.location.host;
+      const host = window.location.host.includes("integration")
+        ? "https://guests.lodgifyintegration.com"
+        : "https://guests.lodgify.com";
       window.parent.location.href = `${host}/form/${hash}`;
     }
 
@@ -43,7 +44,9 @@
 
       const params = new URLSearchParams(window.location.search);
 
-      let host = window.location.host;
+      const host = window.location.host.includes("integration")
+        ? "https://guests.lodgifyintegration.com"
+        : "https://guests.lodgify.com";
       console.log(`XX_ https://${host}/form/${params.get('hash')}`)
 
       script.onload = function () {
