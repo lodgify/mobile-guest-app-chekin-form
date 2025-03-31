@@ -31,7 +31,7 @@
         return;
       }
 
-      const host = window.location.href;
+      const host = 'https://guests.lodgifyintegration.com';
       window.parent.location.href = `${host}/form/${hash}`;
     }
 
@@ -41,10 +41,6 @@
       script.async = true;
 
       const params = new URLSearchParams(window.location.search);
-
-      const host = window.location.href;
-      const hash = params.get('hash');
-      console.log( `XX_ redirect: ${host}/form/${hash}`);
 
       script.onload = function () {
         if (window.ChekinPro) {
