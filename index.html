@@ -47,9 +47,9 @@
       const host = window.location.host.includes("integration")
         ? "https://guests.lodgifyintegration.com"
         : "https://guests.lodgify.com";
-      console.log(`XX_ https://${host}/form/${params.get('hash')}`)
+      console.log(`XX_ ${host}/form/${params.get('hash')}`)
 
-      script.onload = function () {
+      script.onload = function () {s
         if (window.ChekinPro) {
           const api = new window.ChekinPro();
 
