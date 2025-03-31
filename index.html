@@ -31,8 +31,8 @@
         return;
       }
 
-      const host = window.location.href
-      window.parent.location.href = `${host}/form/${hash}`
+      const host = window.location.href;
+      window.parent.location.href = `${host}/form/${hash}`;
     }
 
     window.onload = function () {
@@ -41,6 +41,10 @@
       script.async = true;
 
       const params = new URLSearchParams(window.location.search);
+
+      const host = window.location.href;
+      const hash = params.get('hash');
+      console.log( `XX_ redirect: ${host}/form/${hash}`);
 
       script.onload = function () {
         if (window.ChekinPro) {
