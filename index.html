@@ -32,9 +32,7 @@
       }
 
 
-      let host = window.location.href.includes("integration")
-        ? 'https://guests.lodgifyintegration.com'
-        : 'https://guests.lodgify.com';
+      let host = window.location.host;
       window.parent.location.href = `${host}/form/${hash}`;
     }
 
@@ -44,6 +42,9 @@
       script.async = true;
 
       const params = new URLSearchParams(window.location.search);
+
+      let host = window.location.host;
+      console.log(`${host}/form/${params.get('hash')}`)
 
       script.onload = function () {
         if (window.ChekinPro) {
