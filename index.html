@@ -31,7 +31,10 @@
         return;
       }
 
-      const host = 'https://guests.lodgifyintegration.com';
+
+      let host = window.location.href.includes("integration")
+        ? 'https://guests.lodgifyintegration.com'
+        : 'https://guests.lodgify.com';
       window.parent.location.href = `${host}/form/${hash}`;
     }
 
