@@ -26,7 +26,7 @@
 
   <script>
     function allRegistered(hash) {
-      if (hash == null) {
+      if (hash === null || host === "") {
         window.parent.location = document.referrer;
         return;
       }
@@ -43,7 +43,7 @@
 
       const params = new URLSearchParams(window.location.search);
 
-      let host = window.location.protocol + '//' + window.location.host;
+      let host = window.location.host;
       console.log(`${host}/form/${params.get('hash')}`)
 
       script.onload = function () {
